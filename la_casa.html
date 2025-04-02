@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Casa del Chile</title>
+    <link rel="stylesheet" href="la_casa.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#contacto">Contáctanos</a></li>
+            </ul>
+            <img src="logo1.png" alt="Logo" class="logo">
+        </nav>
+    </header>
+    <section class="hero">
+        <video autoplay muted loop id="background-video">
+            <source src="picante1.mp4" type="video/mp4">
+            Tu navegador no soporta videos.
+        </video>
+        <div class="overlay"></div>
+        <div class="text-box" id="text-box">
+            <p>La Casa del Chile</p>
+            <p>Aquí el picante no se mide, se siente</p>
+        </div>
+    </section>
+
+<!-- Sección de Productos -->
+<section id="productos" class="productos">
+    <h2 style="text-align: center;">Productos</h2>
+
+            
+        <!-- Icono del carrito -->
+        <div class="cart-icon" onclick="toggleCart()">
+            <img src="carrito.png" alt="Carrito" width="30" height="30">
+        </div>
+ s
+            <!-- Producto 1 -->
+            <div class="carousel-item">
+                <div class="product-card">
+                    <img src="chile1.png" alt="Tapas del Diablo">
+                    <div class="product-info">
+                        <h3>Tapas del Diablo</h3>
+                        <p>Un sabor ardiente y explosivo que no dejarás de sentir.</p>
+                        <p class="price">$10.00</p>
+                    </div>
+                    <button class="add-to-cart" onclick="addToCart('Tapas del Diablo', 10)">Añadir al carrito</button>
+                </div>
+            </div>
+            <!-- Producto 2 -->
+            <div class="carousel-item">
+                <div class="product-card">
+                    <img src="chile2.png" alt="Chilero Tradicional">
+                    <div class="product-info">
+                        <h3>Chilero Tradicional</h3>
+                        <p>El chile que revive las mejores tradiciones de nuestra tierra.</p>
+                        <p class="price">$8.00</p>
+                    </div>
+                    <button class="add-to-cart" onclick="addToCart('Chilero Tradicional', 8)">Añadir al carrito</button>
+                </div>
+            </div>
+            <!-- Producto 3 -->
+            <div class="carousel-item">
+                <div class="product-card">
+                    <img src="chile3.png" alt="Chilero Loco">
+                    <div class="product-info">
+                        <h3>Chilero Loco</h3>
+                        <p>El chile para los que buscan una explosión de sabor.</p>
+                        <p class="price">$12.00</p>
+                    </div>
+                    <button class="add-to-cart" onclick="addToCart('Chilero Loco', 12)">Añadir al carrito</button>
+                </div>
+            </div>
+            <!-- Producto 4 -->
+            <div class="carousel-item">
+                <div class="product-card">
+                    <img src="chile4.png" alt="Cebolla Encurtida">
+                    <div class="product-info">
+                        <h3>Cebolla Encurtida</h3>
+                        <p>La cebolla que complementa perfectamente cualquier platillo.</p>
+                        <p class="price">$6.00</p>
+                    </div>
+                    <button class="add-to-cart" onclick="addToCart('Cebolla Encurtida', 6)">Añadir al carrito</button>
+                </div>
+            </div>
+        </div>
+        <button class="prev" onclick="moveCarousel(-1)">&#10094;</button>
+        <button class="next" onclick="moveCarousel(1)">&#10095;</button>
+    </div>
+    <div id="carrito" class="carrito">
+        <h3>Cesta de compras</h3>
+        <ul id="carrito-items"></ul>
+        <button onclick="checkout()">Comprar</button>
+        <button onclick="cancelCart()">Cancelar</button>
+    </div>
+</section>
+
+
+
+<!-- Sección de Nosotros -->
+<section id="nosotros" class="nosotros">
+    <h2>Nosotros</h2>
+    <div class="about-container">
+        <img src="grupo1.jpeg" alt="Grupo" class="group-image">
+        <div class="about-text">
+            <p>Somos un grupo de 5 personas apasionadas por el picante y la gastronomía. Nuestro objetivo es ofrecerte productos únicos que representen lo mejor de la cultura local y la tradición del chile. Cada uno de nosotros aporta su experiencia y amor por lo que hacemos, y estamos comprometidos con brindarte los mejores productos y un servicio excepcional.</p>
+            <p>Conoce más sobre nosotros y nuestros productos, porque aquí en <strong>La Casa del Chile</strong>, el picante se vive con intensidad.</p>
+        </div>
+    </div>
+</section>
+
+
+
+
+<!-- Sección de Contáctenos -->
+<section id="contacto" class="contacto">
+    <h2>Contáctenos</h2>
+    <p>Estamos ubicados en Jinotega, Nicaragua. Si necesitas más información, no dudes en ponerte en contacto con nosotros.</p>
+    
+    <!-- Mapa interactivo -->
+    <div class="map-container">
+        <!-- Se actualiza para tener el estilo adecuado y visualizarse correctamente -->
+        <iframe
+            width="100%"
+            height="450"
+            frameborder="0"
+            style="border:0; border-radius: 8px;"
+            loading="lazy"
+            allowfullscreen
+            src="https://maps.app.goo.gl/khg46uj9QnpMEBGW6">
+        </iframe>
+    </div>
+
+    <!-- Formulario de contacto -->
+    <form class="contact-form">
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" name="name" placeholder="Tu nombre" required>
+
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" placeholder="Tu correo" required>
+
+        <label for="message">Mensaje:</label>
+        <textarea id="message" name="message" placeholder="Tu mensaje" required></textarea>
+
+        <button type="submit">Enviar</button>
+    </form>
+</section>
+
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-info">
+            <p>&copy; 2025 La Casa del Chile. Todos los derechos reservados.</p>
+        </div>
+        <div class="footer-social">
+            <a href="#" target="_blank" class="social-icon">Facebook</a>
+            <a href="#" target="_blank" class="social-icon">Instagram</a>
+            <a href="#" target="_blank" class="social-icon">WhatsApp</a>
+        </div>
+    </div>
+</footer>
+ 
+    
+    <script src="la_casa.js"></script>
+</body>
+</html>
